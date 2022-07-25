@@ -3,7 +3,6 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -74,8 +73,6 @@ public class TypeListTest {
     public void testGetTypes() {
         assertTrue(testTypeList.addType("GeneralSupply"));
         assertTrue(testTypeList.addType("Chemicals"));
-        assertEquals(2, testTypeList.typesLength());
-        assertEquals(testTypeList.getTypes(), testTypeList);
+        assertEquals(testTypeList.getTypes().size(), testTypeList.typesLength());
     }
-
 }

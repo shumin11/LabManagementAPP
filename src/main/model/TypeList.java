@@ -50,9 +50,8 @@ public class TypeList {
 
     // EFFECTS: returns the type list itself
     public LinkedList<Type> getTypes() {
-        return types;
+        return this.types;
     }
-
 }
 
 
