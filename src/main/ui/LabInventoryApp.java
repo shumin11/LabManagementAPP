@@ -179,11 +179,15 @@ public class LabInventoryApp {
         collectItemInformation();
         System.out.println("Enter the type name for this item : ");
         String typeName = input.next();
-        type = new Type(typeName);
-        if (type.addItemToType(typeName, itemA)) {
-            System.out.println(itemA.getItemName() + " is added to the type " + typeName);
-        } else {
-            System.out.println("Can not be added! The item is already in the list.");
+        typeList.addType(typeName);
+        for (Type i : typeList.getTypes()) {
+            if (i.getTypeName() == typeName) {
+                if (i.addItemToType(typeName, itemA)) {
+                    System.out.println(itemA.getItemName() + " is added to the type " + typeName);
+                } else {
+                    System.out.println("Can not be added! The item is already in the list.");
+                }
+            }
         }
     }
 
