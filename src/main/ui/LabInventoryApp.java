@@ -45,7 +45,7 @@ public class LabInventoryApp {
         System.out.println("\nSelect from:");
         System.out.println("\ta -> add a new type or item");
         System.out.println("\td -> delete a type or an item");
-        System.out.println("\tv -> view list of items from selected type");
+        System.out.println("\tv -> view list of types or view list of items from selected type");
         System.out.println("\tg -> get details for one items");
         System.out.println("\tq -> quit");
     }
@@ -106,8 +106,39 @@ public class LabInventoryApp {
         }
     }
 
-    // EFFECTS: prompts user to select a type and view all the items in the list
+    // EFFECTS: prompts user to select to view types or items on specific type
     public void doView() {
+        System.out.println("\nSelect from:");
+        System.out.println("\tt -> view the type list");
+        System.out.println("\ti -> select a type and view all items");
+        String command = null;
+        command = input.next();
+        command = command.toLowerCase();
+
+        if (command.equals("t")) {
+            doViewTypes();
+        } else if (command.equals("i")) {
+            doViewItems();
+        } else {
+            System.out.println("Selection not valid...");
+            doView();
+        }
+    }
+
+    // EFFECTS: conducts an action to view types
+    public void doViewTypes() {
+        if (typeList.getTypes().isEmpty()) {
+            System.out.println("This is an empty inventory!");
+        } else {
+            for (Type i : typeList.getTypes()) {
+                System.out.println(i.getTypeName());
+            }
+        }
+    }
+
+
+    // EFFECTS: prompts user to select a type and view all the items in the list
+    public void doViewItems() {
         System.out.println("Enter the type name : ");
         String typeName = input.next();
         if (typeList.getTypes().isEmpty()) {
