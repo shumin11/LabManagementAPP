@@ -47,10 +47,10 @@ public class Type {
     // EFFECTS: returns a list of items associated with the typeName;
     //          returns an empty list if there are no items
     public List<Item> getItemsForType(String typeName) {
-        if (Objects.equals(this.typeName, typeName)) {
+        if (this.typeName.equals(typeName)) {
             return this.items;
         } else {
-            return Collections.emptyList();
+            return null;
         }
     }
 

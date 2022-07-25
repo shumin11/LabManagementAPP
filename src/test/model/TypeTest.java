@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -117,6 +118,13 @@ public class TypeTest {
         assertTrue(testType.addItemToType("GeneralSupply", itemB));
         assertEquals(2, testType.itemsLength());
     }
+
+    @Test
+    public void testGetItemsForTypeWithDifferentName() {
+        assertTrue(testType.addItemToType("GeneralSupply", itemA));
+        assertEquals(null, testType.getItemsForType("Chemical"));
+    }
+
 
     @Test
     public void testItemIsEmpty() {
