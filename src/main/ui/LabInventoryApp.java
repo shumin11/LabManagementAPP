@@ -6,6 +6,7 @@ import model.TypeList;
 
 import java.util.*;
 
+// Lab Inventory application
 public class LabInventoryApp {
     private Scanner input;
     private Item itemA;

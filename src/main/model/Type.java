@@ -12,6 +12,7 @@ public class Type {
     private LinkedList<Item> items;
 
 
+    // REQUIRES: typeName has a non-zero length
     // EFFECTS: construct a type with no type name or items added
     public Type(String typeName) {
         this.typeName = typeName;
