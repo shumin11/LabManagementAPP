@@ -73,6 +73,7 @@ public class TypeListTest {
     public void testGetTypes() {
         assertTrue(testTypeList.addType("GeneralSupply"));
         assertTrue(testTypeList.addType("Chemicals"));
-        assertEquals(testTypeList.getTypes().size(), testTypeList.typesLength());
+        assertEquals(2, testTypeList.typesLength());
+        assertEquals(2, testTypeList.getTypes().size());
     }
 }

@@ -141,7 +141,7 @@ public class LabInventoryApp {
         System.out.println("Enter the type name: ");
         String typeName = input.next();
         if (typeList.addType(typeName)) {
-            System.out.println(typeName + " is added to the list.");
+            System.out.println(typeName + " is added to the typelist.");
         } else {
             System.out.println("Can not be added! The name is in the list already.");
         }
@@ -153,7 +153,7 @@ public class LabInventoryApp {
         System.out.println("Enter the type name: ");
         String typeName = input.next();
         if (typeList.removeType(typeName)) {
-            System.out.println(typeName + " is removed to the list.");
+            System.out.println(typeName + " is removed from the list.");
         } else {
             System.out.println("Can not be deleted! This type is not in the list.");
         }
