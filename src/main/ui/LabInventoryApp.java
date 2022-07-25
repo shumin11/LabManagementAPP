@@ -72,7 +72,8 @@ public class LabInventoryApp {
         System.out.println("\nSelect from:");
         System.out.println("\tt -> add a new type");
         System.out.println("\ti -> add a new item");
-        String command = input.next();
+        String command = null;
+        command = input.next();
         command = command.toLowerCase();
 
         if (command.equals("t")) {
@@ -91,7 +92,8 @@ public class LabInventoryApp {
         System.out.println("\nSelect from:");
         System.out.println("\tt -> delete a new type");
         System.out.println("\ti -> delete a new item");
-        String command = input.next();
+        String command = null;
+        command = input.next();
         command = command.toLowerCase();
 
         if (command.equals("t")) {
