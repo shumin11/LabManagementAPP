@@ -108,10 +108,12 @@ public class LabInventoryApp {
         System.out.println("Enter the type name : ");
         String typeName = input.next();
         if (typeList.getTypes().isEmpty()) {
-            System.out.printf("This is an empty inventory!");
+            System.out.println("This is an empty inventory!");
         } else {
             for (Type i : typeList.getTypes()) {
-                if (i.getItemsForType(typeName).isEmpty()) {
+                if (i.getItemsForType(typeName) == null) {
+                    System.out.println("No such type name in the inventory");
+                } else if (i.getItemsForType(typeName).isEmpty()) {
                     System.out.println("There are no items in type " + i.getTypeName());
                 } else {
                     for (Item j : i.getItemsForType(typeName)) {
@@ -130,16 +132,21 @@ public class LabInventoryApp {
             System.out.println("This lab inventory is empty!");
         } else {
             for (Type i : typeList.getTypes()) {
-                for (Item j : i.getItemsForType(i.getTypeName())) {
-                    if (j.getItemName() == itemName) {
-                        System.out.println(j.toString());
-                    } else {
-                        System.out.println(itemName + " is not in " + i.getTypeName() + " type");
+                if (i.getItemsForType(i.getTypeName()).isEmpty()) {
+                    System.out.println("no items in the type " + i.getTypeName());
+                } else {
+                    for (Item j : i.getItemsForType(i.getTypeName())) {
+                        if (j.getItemName() == itemName) {
+                            System.out.println(j.toString());
+                        } else {
+                            System.out.println(itemName + " is not in " + i.getTypeName() + " type");
+                        }
                     }
                 }
             }
         }
     }
+
 
     // MODIFIES: this
     // EFFECTS: conducts the action of adding a type
