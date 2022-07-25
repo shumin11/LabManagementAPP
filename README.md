@@ -18,9 +18,9 @@ for chemicals, waiting for supplies to order, and communicating well with people
 - As a user, I want to be able to delete an item from that type
 - As a user, I want to be able to select a type and view the list of items on that type
 - As a user, I want to be able to select an item and add details for that item
-   - such as LOCATION, VENDOR, AMOUNT, UPDATED, STATUS
+   - such as AMOUNT, LOCATION, VENDOR, UPDATED, etc.
+- As a user, I want to be able to select an item and view all details.
 
-    
 
     
 
