@@ -80,6 +80,7 @@ public class LabInventoryApp {
             doItemAdd();
         } else {
             System.out.println("Selection not valid...");
+            doAdd();
         }
     }
 
@@ -98,6 +99,7 @@ public class LabInventoryApp {
             doItemDelete();
         } else {
             System.out.println("Selection not valid...");
+            doDelete();
         }
     }
 
@@ -105,12 +107,16 @@ public class LabInventoryApp {
     public void doView() {
         System.out.println("Enter the type name : ");
         String typeName = input.next();
-        for (Type i : typeList.getTypes()) {
-            if (i.getItemsForType(typeName).isEmpty()) {
-                System.out.println("There are no items in type " + i.getTypeName());
-            } else {
-                for (Item j : i.getItemsForType(typeName)) {
-                    System.out.println(j.getItemName());
+        if (typeList.getTypes().isEmpty()) {
+            System.out.printf("This is an empty inventory!");
+        } else {
+            for (Type i : typeList.getTypes()) {
+                if (i.getItemsForType(typeName).isEmpty()) {
+                    System.out.println("There are no items in type " + i.getTypeName());
+                } else {
+                    for (Item j : i.getItemsForType(typeName)) {
+                        System.out.println(j.getItemName());
+                    }
                 }
             }
         }
@@ -141,7 +147,7 @@ public class LabInventoryApp {
         System.out.println("Enter the type name: ");
         String typeName = input.next();
         if (typeList.addType(typeName)) {
-            System.out.println(typeName + " is added to the typelist.");
+            System.out.println(typeName + " is added to the type list.");
         } else {
             System.out.println("Can not be added! The name is in the list already.");
         }
