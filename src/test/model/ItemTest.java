@@ -29,7 +29,7 @@ class ItemTest {
     }
 
     @Test
-    public void testConstructorNegAmount(){
+    public void testConstructorNegAmount() {
         testItem = new Item("PipetteTips", -10, "Room101Cabinet2", "Fisher",
                 "2022-07-24", 10);
         assertEquals("PipetteTips", testItem.getItemName());
@@ -43,7 +43,7 @@ class ItemTest {
     }
 
     @Test
-    public void testConstructorNegCutoff(){
+    public void testConstructorNegCutoff() {
         testItem = new Item("PipetteTips", 80, "Room101Cabinet2", "Fisher",
                 "2022-07-24", -5);
         assertEquals("PipetteTips", testItem.getItemName());

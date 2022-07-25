@@ -15,11 +15,12 @@ for chemicals, waiting for supplies to order, and communicating well with people
 - As a user, I want to be able to create a new type and add it to a list of types 
   - types: CHEMICAL, GENERAL SUPPLY, KITS, etc.
 - As a user, I want to be able to select a type and add a new item to that type
+- As a user, I want to be able to delete a type from the list
 - As a user, I want to be able to delete an item from that type
-- As a user, I want to be able to select a type and view the list of items on that type
-- As a user, I want to be able to select an item and add details for that item
+- As a user, I want to be able to view the list of items on selected type
+- As a user, I want to be able to get details for selected item
    - such as AMOUNT, LOCATION, VENDOR, UPDATED, etc.
-- As a user, I want to be able to select an item and view all details.
+
 
 
     

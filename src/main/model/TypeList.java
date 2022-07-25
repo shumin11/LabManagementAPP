@@ -48,6 +48,11 @@ public class TypeList {
         return (types.size() == 0);
     }
 
+    // EFFECTS: returns the type list itself
+    public LinkedList<Type> getTypes() {
+        return types;
+    }
+
 }
 
 

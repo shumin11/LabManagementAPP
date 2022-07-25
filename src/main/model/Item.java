@@ -7,9 +7,6 @@ import java.util.List;
 // Represents an item having a name, amount, location, type, updated, and notes
 
 public class Item {
-    private static final int MAX_AMOUNT = 500;
-    private static final int CUTOFF = 10;
-
     private String itemName;
     private int amount;
     private String location;
@@ -41,6 +38,7 @@ public class Item {
         notes = new ArrayList<>();
         toOrder = isToOrder();
     }
+
 
     // MODIFIES: this
     // EFFECTS: adds note to the list unless it's already there, in which case do nothing

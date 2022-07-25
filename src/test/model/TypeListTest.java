@@ -3,14 +3,20 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TypeListTest {
     TypeList testTypeList;
+    Type typeA;
+    Type typeB;
 
     @BeforeEach
     public void runBefore() {
         this.testTypeList = new TypeList();
+        typeA = new Type("Kits");
+        typeB = new Type("Antibody");
     }
 
     @Test
@@ -63,4 +69,13 @@ public class TypeListTest {
         assertEquals(1, testTypeList.typesLength());
         assertFalse(testTypeList.typesIsEmpty());
     }
+
+    @Test
+    public void testGetTypes() {
+        assertTrue(testTypeList.addType("GeneralSupply"));
+        assertTrue(testTypeList.addType("Chemicals"));
+        assertEquals(2, testTypeList.typesLength());
+        assertEquals(testTypeList.getTypes(), testTypeList);
+    }
+
 }
