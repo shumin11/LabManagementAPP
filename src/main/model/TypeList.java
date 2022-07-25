@@ -17,7 +17,7 @@ public class TypeList {
     //          adds the type to the list and return true; otherwise, returns false.
     public boolean addType(String typeName) {
         for (Type i : types) {
-            if (i.getTypeName() == typeName) {
+            if (i.getTypeName().equals(typeName)) {
                 return false;
             }
         }
@@ -30,7 +30,7 @@ public class TypeList {
     //          removes the type from the list and return true; otherwise, returns false.
     public boolean removeType(String typeName) {
         for (Type i : types) {
-            if (i.getTypeName() == typeName) {
+            if (i.getTypeName().equals(typeName)) {
                 types.remove(i);
                 return true;
             }

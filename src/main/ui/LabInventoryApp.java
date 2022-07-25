@@ -110,9 +110,11 @@ public class LabInventoryApp {
         if (typeList.getTypes().isEmpty()) {
             System.out.println("This is an empty inventory!");
         } else {
+            int index = 0;
             for (Type i : typeList.getTypes()) {
                 if (i.getItemsForType(typeName) == null) {
-                    System.out.println("No such type name in the inventory");
+                    System.out.println(
+                            "No such type name in type name: " + typeList.getTypes().get(index).getTypeName());
                 } else if (i.getItemsForType(typeName).isEmpty()) {
                     System.out.println("There are no items in type " + i.getTypeName());
                 } else {
@@ -120,6 +122,7 @@ public class LabInventoryApp {
                         System.out.println(j.getItemName());
                     }
                 }
+                index++;
             }
         }
     }
@@ -136,7 +139,7 @@ public class LabInventoryApp {
                     System.out.println("no items in the type " + i.getTypeName());
                 } else {
                     for (Item j : i.getItemsForType(i.getTypeName())) {
-                        if (j.getItemName() == itemName) {
+                        if (j.getItemName().equals(itemName)) {
                             System.out.println(j.toString());
                         } else {
                             System.out.println(itemName + " is not in " + i.getTypeName() + " type");
@@ -153,7 +156,8 @@ public class LabInventoryApp {
     public void doTypeAdd() {
         System.out.println("Enter the type name: ");
         String typeName = input.next();
-        if (typeList.addType(typeName)) {
+        boolean result = typeList.addType(typeName);
+        if (result) {
             System.out.println(typeName + " is added to the type list.");
         } else {
             System.out.println("Can not be added! The name is in the list already.");
@@ -165,7 +169,8 @@ public class LabInventoryApp {
     public void doTypeDelete() {
         System.out.println("Enter the type name: ");
         String typeName = input.next();
-        if (typeList.removeType(typeName)) {
+        boolean result = typeList.removeType(typeName);
+        if (result) {
             System.out.println(typeName + " is removed from the list.");
         } else {
             System.out.println("Can not be deleted! This type is not in the list.");
@@ -181,11 +186,11 @@ public class LabInventoryApp {
         String typeName = input.next();
         typeList.addType(typeName);
         for (Type i : typeList.getTypes()) {
-            if (i.getTypeName() == typeName) {
+            if (i.getTypeName().equals(typeName)) {
                 if (i.addItemToType(typeName, itemA)) {
                     System.out.println(itemA.getItemName() + " is added to the type " + typeName);
                 } else {
-                    System.out.println("Can not be added! The item is already in the list.");
+                    System.out.println("Can not be added! this item is already in the type");
                 }
             }
         }
@@ -197,11 +202,20 @@ public class LabInventoryApp {
         collectItemInformation();
         System.out.println("Enter the type name for this item : ");
         String typeName = input.next();
-        type = new Type(typeName);
-        if (type.removeItemFromType(typeName, itemA)) {
-            System.out.println(itemA.getItemName() + " is removed from the type " + typeName);
+        if (typeList.getTypes().isEmpty()) {
+            System.out.println("There are no types in inventory. Nothing to delete!");
         } else {
-            System.out.println("Can not be deleted! The item is not in the list.");
+            for (Type i : typeList.getTypes()) {
+                if (i.getTypeName().equals(typeName)) {
+                    if (i.removeItemFromType(typeName, itemA)) {
+                        System.out.println(itemA.getItemName() + " is removed from the type " + typeName);
+                    } else {
+                        System.out.println("Can not be deleted! This item is not in the type");
+                    }
+                } else {
+                    System.out.println("can not be deleted! This type is not existing, need to have the type first");
+                }
+            }
         }
     }
 
