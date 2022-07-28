@@ -10,7 +10,6 @@ import java.util.*;
 public class LabInventoryApp {
     private Scanner input;
     private Item itemA;
-    private Type type;
     private TypeList typeList;
 
     // EFFECTS: runs the LabInventory application
@@ -169,14 +168,12 @@ public class LabInventoryApp {
             System.out.println("This lab inventory is empty!");
         } else {
             for (Type i : typeList.getTypes()) {
-                if (i.getItemsForType(i.getTypeName()).isEmpty()) {
+                if (i.getItemsForType(i.getTypeName()).isEmpty() || i.getItemsForType(i.getTypeName()) == null) {
                     System.out.println("no items in the type " + i.getTypeName());
                 } else {
                     for (Item j : i.getItemsForType(i.getTypeName())) {
                         if (j.getItemName().equals(itemName)) {
                             System.out.println(j.toString());
-                        } else {
-                            System.out.println(itemName + " is not in " + i.getTypeName() + " type");
                         }
                     }
                 }
