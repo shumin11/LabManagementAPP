@@ -3,17 +3,26 @@ package ui;
 import model.Item;
 import model.Type;
 import model.TypeList;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 // Lab Inventory application
 public class LabInventoryApp {
+    private static final String JSON_STORE = "./data/labInventory.json";
     private Scanner input;
     private Item itemA;
     private TypeList typeList;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the LabInventory application
     public LabInventoryApp() {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runLabInventory();
     }
 
@@ -45,7 +54,9 @@ public class LabInventoryApp {
         System.out.println("\ta -> add a new type or item");
         System.out.println("\td -> delete a type or an item");
         System.out.println("\tv -> view list of types or view list of items from selected type");
-        System.out.println("\tg -> get details for one items");
+        System.out.println("\tg -> get details for one item");
+        System.out.println("\ts -> save item information to file");
+        System.out.println("\tl -> load data from file");
         System.out.println("\tq -> quit");
     }
 
@@ -59,6 +70,10 @@ public class LabInventoryApp {
             doView();
         } else if (command.equals("g")) {
             doGet();
+        } else if (command.equals("s")) {
+            doSave();
+        } else if (command.equals("l")) {
+            doLoad();
         } else {
             System.out.println("Selection not valid...");
         }
@@ -143,19 +158,19 @@ public class LabInventoryApp {
         if (typeList.getTypes().isEmpty()) {
             System.out.println("This is an empty inventory!");
         } else {
-            int index = 0;
             for (Type i : typeList.getTypes()) {
                 if (i.getItemsForType(typeName) == null) {
                     System.out.println(
-                            "No such type name in type name: " + typeList.getTypes().get(index).getTypeName());
+                            "No such item in type named " + i.getTypeName());
                 } else if (i.getItemsForType(typeName).isEmpty()) {
                     System.out.println("There are no items in type " + i.getTypeName());
                 } else {
+                    int index = 1;
                     for (Item j : i.getItemsForType(typeName)) {
-                        System.out.println(j.getItemName());
+                        System.out.println("Items in selected type: " + index + "-" + j.getItemName());
+                        index++;
                     }
                 }
-                index++;
             }
         }
     }
@@ -178,6 +193,29 @@ public class LabInventoryApp {
                     }
                 }
             }
+        }
+    }
+
+    // EFFECTS: saves lab inventory information to file
+    public void doSave() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(typeList);
+            jsonWriter.close();
+            System.out.println("Saved lab inventory information to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads lab inventory information form file
+    public void doLoad() {
+        try {
+            typeList = jsonReader.read();
+            System.out.println("Loaded lab inventory information from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
 

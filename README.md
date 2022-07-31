@@ -20,9 +20,8 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - As a user, I want to be able to view the list of types or the list of items on selected type
 - As a user, I want to be able to get details for selected item
    - such as AMOUNT, LOCATION, VENDOR, UPDATED, etc.
-- As a user, when I select the quit option from the application menu, I want to be reminded to save all my data to file
-   and have the option to do so or not
-- As a user, when I start the application, I want to be given the option to reload previous data from file 
+- As a user, I want to be able to save all lab inventory information to file
+- As a user, I want to be able to load previous saved information from file 
 
 
 

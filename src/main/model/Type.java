@@ -1,13 +1,17 @@
 package model;
 
-import java.util.Collections;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
+
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
+
 
 // Represents a type having a name, and a list of items associated with it
 
-public class Type {
+public class Type implements Writable {
     String typeName;
     private LinkedList<Item> items;
 
@@ -70,4 +74,21 @@ public class Type {
         return (this.items.size() == 0);
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("type name", typeName);
+        json.put("items", itemsToJson());
+        return json;
+    }
+
+    // EFFECTS: returns items as a Json array
+    private JSONArray itemsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Item i : items) {
+            jsonArray.put(i.toJson());
+        }
+        return jsonArray;
+    }
 }

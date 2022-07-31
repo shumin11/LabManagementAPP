@@ -1,0 +1,25 @@
+[{
+    "type name": "general supply",
+    "items": [
+        {
+            "amount": 200,
+            "notes": ["none"],
+            "vendor": "fisher",
+            "toOrder": false,
+            "location": "cabinetA",
+            "cutoff": 100,
+            "item name": "tips",
+            "updated": "2022"
+        },
+        {
+            "amount": 100,
+            "notes": ["none"],
+            "vendor": "vwr",
+            "toOrder": false,
+            "location": "room",
+            "cutoff": 50,
+            "item name": "gloves",
+            "updated": "2022"
+        }
+    ]
+}]

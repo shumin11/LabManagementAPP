@@ -52,6 +52,7 @@ public class TypeList {
     public LinkedList<Type> getTypes() {
         return this.types;
     }
+
 }
 
 

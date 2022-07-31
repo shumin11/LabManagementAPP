@@ -1,12 +1,16 @@
 package model;
 
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // Represents an item having a name, amount, location, type, updated, and notes
 
-public class Item {
+public class Item implements Writable {
     private String itemName;
     private int amount;
     private String location;
@@ -129,4 +133,28 @@ public class Item {
     }
 
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("item name", itemName);
+        json.put("amount", amount);
+        json.put("location", location);
+        json.put("vendor", vendor);
+        json.put("updated", updated);
+        json.put("cutoff", cutoff);
+        json.put("toOrder", toOrder);
+        json.put("notes", notesToJson());
+        return json;
+    }
+
+
+    // EFFECTS: returns notes as a Json array
+    private JSONArray notesToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (String i : notes) {
+            jsonArray.put(i);
+        }
+        return jsonArray;
+    }
 }
