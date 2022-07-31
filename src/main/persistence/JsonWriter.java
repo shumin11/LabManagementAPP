@@ -27,7 +27,7 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of workroom to file
+    // EFFECTS: writes JSON representation of typeList to file
     public void write(TypeList typeList) {
         JSONArray jsonArray = new JSONArray();
         for (Type t : typeList.getTypes()) {
