@@ -1,0 +1,25 @@
+[{
+    "type name": "GeneralSupply",
+    "items": [
+        {
+            "amount": 80,
+            "notes": [],
+            "vendor": "Fisher",
+            "toOrder": false,
+            "location": "Room101Cabinet2",
+            "cutoff": 10,
+            "item name": "PipetteTips",
+            "updated": "2022-07-24"
+        },
+        {
+            "amount": 120,
+            "notes": [],
+            "vendor": "Fisher",
+            "toOrder": false,
+            "location": "Room101Cabinet3",
+            "cutoff": 20,
+            "item name": "PetriDish",
+            "updated": "2022-07-24"
+        }
+    ]
+}]
