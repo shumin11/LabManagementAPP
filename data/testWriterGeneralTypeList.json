@@ -3,7 +3,7 @@
     "items": [
         {
             "amount": 80,
-            "notes": [],
+            "notes": ["none"],
             "vendor": "Fisher",
             "toOrder": false,
             "location": "Room101Cabinet2",
@@ -13,7 +13,7 @@
         },
         {
             "amount": 120,
-            "notes": [],
+            "notes": ["testing"],
             "vendor": "Fisher",
             "toOrder": false,
             "location": "Room101Cabinet3",

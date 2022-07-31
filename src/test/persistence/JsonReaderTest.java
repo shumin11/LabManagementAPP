@@ -46,8 +46,10 @@ public class JsonReaderTest extends JsonTest {
             assertEquals(2, type.getItemsForType("GeneralSupply").size());
             checkItem("PipetteTips", 80, "Room101Cabinet2", "Fisher",
                     "2022-07-24", 10, type.getItemsForType("GeneralSupply").get(0));
+            assertEquals("none", type.getItemsForType("GeneralSupply").get(0).getNotes().get(0));
             checkItem("PetriDish", 120, "Room101Cabinet3", "Fisher",
                     "2022-07-24", 20, type.getItemsForType("GeneralSupply").get(1));
+            assertEquals("testing", type.getItemsForType("GeneralSupply").get(1).getNotes().get(0));
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
