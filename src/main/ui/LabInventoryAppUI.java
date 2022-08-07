@@ -24,7 +24,6 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
     private JPanel mdlPanel;
     private JPanel btnPanel;
     private JTable table;
-    private JLabel hint;
     private JTextField textTypeName;
     private JTextField textItemName;
     private JTextField textAmount;
@@ -36,13 +35,13 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
     private JButton addButton;
     private JButton deleteButton;
     private JButton saveButton;
-    private JButton loadButton;
     private Object[] data;
     private DefaultTableModel model;
     private Item itemA;
     private Item itemB;
     private TypeList typeList;
     private JMenuItem loadItem;
+    private int selectedRow;
 
     public LabInventoryAppUI() {
         super("Lab Inventory");
@@ -89,7 +88,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
             typeList = jsonReader.read();
             for (model.Type a : typeList.getTypes()) {
                 data[0] = a.getTypeName();
-                for (Item b: a.getItemsForType(a.getTypeName())) {
+                for (Item b : a.getItemsForType(a.getTypeName())) {
                     data[1] = b.getItemName();
                     data[2] = b.getAmount();
                     data[3] = b.getLocation();
@@ -213,7 +212,6 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         for (model.Type i : typeList.getTypes()) {
             if (i.getTypeName().equals(thisTypeName)) {
                 if (i.addItemToType(thisTypeName, itemA)) {
-                    i.addItemToType(i.getTypeName(), itemA);
                     addDataToTable();
                 } else {
                     JOptionPane.showMessageDialog(null,
@@ -241,16 +239,17 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int i = table.getSelectedRow();
+                selectedRow = table.getSelectedRow();
+                int i = selectedRow - 1;
                 if (i >= 0) {
-                    model.removeRow(i); // Why there are exception
-                    String itemName = (String) model.getValueAt(i, 1);
-                    int initialAmount = (int) model.getValueAt(i, 2);
-                    String location = (String) model.getValueAt(i, 3);
-                    String vendor = (String) model.getValueAt(i, 4);
-                    String updated = (String) model.getValueAt(i, 5);
-                    int cutoff = (int) model.getValueAt(i, 6);
-                    ArrayList<String> notes = (ArrayList<String>) model.getValueAt(i, 8);
+                    model.removeRow(selectedRow);
+                    String itemName = (String) table.getValueAt(i, 1);
+                    int initialAmount = (int) table.getValueAt(i, 2);
+                    String location = (String) table.getValueAt(i, 3);
+                    String vendor = (String) table.getValueAt(i, 4);
+                    String updated = (String) table.getValueAt(i, 5);
+                    int cutoff = (int) table.getValueAt(i, 6);
+                    ArrayList<String> notes = (ArrayList<String>) table.getValueAt(i, 8);
                     itemB = new Item(itemName, initialAmount, location, vendor, updated, cutoff);
                     itemB.getNotes().addAll(notes);
                     removeItem();
@@ -264,8 +263,8 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
 
     // remove selected item from typeList
     public void removeItem() {
-        int i = table.getSelectedRow();
-        String typeName = (String) model.getValueAt(i, 0);
+        int tableRow = selectedRow - 1;
+        String typeName = (String) table.getValueAt(tableRow, 0);
         for (model.Type j : typeList.getTypes()) {
             if (j.getTypeName().equals(typeName)) {
                 j.removeItemFromType(typeName, itemB);

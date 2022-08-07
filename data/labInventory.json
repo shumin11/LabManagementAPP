@@ -1,25 +1,13 @@
 [{
     "type name": "general supply",
-    "items": [
-        {
-            "amount": 100,
-            "notes": ["none"],
-            "vendor": "fisher",
-            "toOrder": false,
-            "location": "room",
-            "cutoff": 10,
-            "item name": "tips",
-            "updated": "2022-08-07"
-        },
-        {
-            "amount": 100,
-            "notes": ["none"],
-            "vendor": "fisher",
-            "toOrder": true,
-            "location": "room",
-            "cutoff": 200,
-            "item name": "gloves",
-            "updated": "2022-08-07"
-        }
-    ]
+    "items": [{
+        "amount": 100,
+        "notes": ["none"],
+        "vendor": "fisher",
+        "toOrder": false,
+        "location": "room",
+        "cutoff": 50,
+        "item name": "gloves",
+        "updated": "2022"
+    }]
 }]
