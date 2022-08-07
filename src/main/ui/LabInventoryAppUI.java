@@ -87,12 +87,24 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             typeList = jsonReader.read();
+            for (model.Type a : typeList.getTypes()) {
+                data[0] = a.getTypeName();
+                for (Item b: a.getItemsForType(a.getTypeName())) {
+                    data[1] = b.getItemName();
+                    data[2] = b.getAmount();
+                    data[3] = b.getLocation();
+                    data[4] = b.getVendor();
+                    data[5] = b.getUpdated();
+                    data[6] = b.getCutOff();
+                    data[7] = b.isToOrder();
+                    data[8] = b.getNotes();
+                    model.addRow(data);
+                }
+            }
         } catch (IOException ioException) {
             JOptionPane.showMessageDialog(null,
                     "Unable to read from file: " + JSON_STORE, "Error", 0);
         }
-
-
     }
 
     public void createTable() {
@@ -261,7 +273,6 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         }
     }
 
-
     public void actionForSaveButton() {
         saveButton.addActionListener(new ActionListener() {
             @Override
@@ -276,7 +287,5 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
                 }
             }
         });
-
     }
-
 }

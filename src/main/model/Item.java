@@ -160,44 +160,22 @@ public class Item implements Writable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        if (obj == null) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-
-        addEqual(obj);
-
-        return true;
+        Item item = (Item) o;
+        return amount == item.amount && cutoff == item.cutoff && toOrder == item.toOrder
+                && itemName.equals(item.itemName) && location.equals(item.location)
+                && vendor.equals(item.vendor) && updated.equals(item.updated);
     }
 
-    public Boolean addEqual(Object obj) {
-        final Item other = (Item) obj;
-        if (!Objects.equals(this.itemName, other.itemName)) {
-            return false;
-        }
-        if (!Objects.equals(this.amount, other.amount)) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
-            return false;
-        }
-        if (!Objects.equals(this.vendor, other.vendor)) {
-            return false;
-        }
-        if (!Objects.equals(this.updated, other.updated)) {
-            return false;
-        }
-        if (!Objects.equals(this.cutoff, other.cutoff)) {
-            return false;
-        }
-        return true;
+    @Override
+    public int hashCode() {
+        return Objects.hash(itemName, amount, location, vendor, updated, cutoff, toOrder);
     }
-
 }
 
