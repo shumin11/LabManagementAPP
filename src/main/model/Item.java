@@ -7,6 +7,7 @@ import persistence.Writable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 // Represents an item having a name, amount, location, type, updated, and notes
 
@@ -157,4 +158,46 @@ public class Item implements Writable {
         }
         return jsonArray;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+
+        addEqual(obj);
+
+        return true;
+    }
+
+    public Boolean addEqual(Object obj) {
+        final Item other = (Item) obj;
+        if (!Objects.equals(this.itemName, other.itemName)) {
+            return false;
+        }
+        if (!Objects.equals(this.amount, other.amount)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.vendor, other.vendor)) {
+            return false;
+        }
+        if (!Objects.equals(this.updated, other.updated)) {
+            return false;
+        }
+        if (!Objects.equals(this.cutoff, other.cutoff)) {
+            return false;
+        }
+        return true;
+    }
+
 }
+

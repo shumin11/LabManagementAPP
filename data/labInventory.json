@@ -2,24 +2,24 @@
     "type name": "general supply",
     "items": [
         {
-            "amount": 200,
+            "amount": 100,
             "notes": ["none"],
             "vendor": "fisher",
             "toOrder": false,
-            "location": "cabinetA",
-            "cutoff": 100,
+            "location": "room",
+            "cutoff": 10,
             "item name": "tips",
-            "updated": "2022"
+            "updated": "2022-08-07"
         },
         {
             "amount": 100,
             "notes": ["none"],
-            "vendor": "vwr",
-            "toOrder": false,
+            "vendor": "fisher",
+            "toOrder": true,
             "location": "room",
-            "cutoff": 50,
+            "cutoff": 200,
             "item name": "gloves",
-            "updated": "2022"
+            "updated": "2022-08-07"
         }
     ]
 }]
