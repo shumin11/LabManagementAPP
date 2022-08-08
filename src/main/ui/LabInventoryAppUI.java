@@ -14,6 +14,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * This class represent the main labInventory APP, it can save and load to/from previous data file
+ * The ui will show brief lab inventory information and have options to add new items, or delete an
+ * item from the list
+ */
 public class LabInventoryAppUI extends JFrame implements ActionListener {
 
     private static final String JSON_STORE = "./data/labInventory.json";
@@ -43,6 +48,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
     private JMenuItem loadItem;
     private int selectedRow;
 
+    // EFFECTS: Constructs a frame which can presenting item information, user input and functional buttons
     public LabInventoryAppUI() {
         super("Lab Inventory");
         setSize(800, 1200);
@@ -71,6 +77,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+    // EFFECTS: add a menu bar to the main frame
     public void addMenuBar() {
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
@@ -82,6 +89,9 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         setJMenuBar(menuBar);
     }
 
+    // MODIFIES: this
+    // EFFECTS: Menu item function while clicking the menu
+    //          (reads information from saved file and load them to the table on frame)
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
@@ -106,6 +116,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         }
     }
 
+    // EFFECTS: Creates a table on the frame
     public void createTable() {
         topPanel.setLayout(new GridLayout(1, 0));
         String[] columnNames = {"Type Name", "Item Name", "Amount", "Location",
@@ -126,6 +137,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
 
     }
 
+    // EFFECTS: Creates labels and fields for user to input item information
     public void createEditors() {
         GridLayout gird = new GridLayout(4, 4, 5, 5);
         mdlPanel.setLayout(gird);
@@ -156,6 +168,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         }
     }
 
+    // EFFECTS: Creates fields for inputting item information
     public void setJTextField() {
         textTypeName = new JTextField(20);
         textItemName = new JTextField(20);
@@ -167,6 +180,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         textNotes = new JTextField(20);
     }
 
+    // EFFECTS: Add buttons
     public void createButtons() {
         btnPanel.setLayout(new FlowLayout());
         addButton = new JButton("ADD");
@@ -187,6 +201,10 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         actionForSaveButton();
     }
 
+    // REQUIRES: input fields related to item information can not be empty
+    // MODIFIES: this
+    // EFFECTS: Function while clicking the add button
+    //         (add the item information input by user to the table and to database)
     public void actionForAddButton() {
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -207,6 +225,8 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         });
     }
 
+    // MODIFIES: this
+    // EFFECTS: Adds item information into the table and list; if the item has been added, it will notify users
     public void addItem() {
         String thisTypeName = textTypeName.getText();
         for (model.Type i : typeList.getTypes()) {
@@ -221,6 +241,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         }
     }
 
+    // EFFECTS: Adds data to table on frame
     public void addDataToTable() {
         data[0] = textTypeName.getText();
         data[1] = itemA.getItemName();
@@ -234,7 +255,10 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         model.addRow(data);
     }
 
-
+    // REQUIRES: one row from table has to be selected
+    // MODIFIES: this
+    // EFFECTS: Function while clicking the delete button
+    //          (delete the selected item from the table and from the database)
     public void actionForDeleteButton() {
         deleteButton.addActionListener(new ActionListener() {
             @Override
@@ -261,7 +285,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         });
     }
 
-    // remove selected item from typeList
+    // EFFECTS: Removes selected item from typeList
     public void removeItem() {
         int tableRow = selectedRow - 1;
         String typeName = (String) table.getValueAt(tableRow, 0);
@@ -272,6 +296,8 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         }
     }
 
+    // EFFECTS: Function while clicking the save button
+    //          (save information to json file)
     public void actionForSaveButton() {
         saveButton.addActionListener(new ActionListener() {
             @Override

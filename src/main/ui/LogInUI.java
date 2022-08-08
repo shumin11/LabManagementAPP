@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 
-/** This class creates a login panel to start this APP
+/**
+ * This class creates a login panel to start this APP
  */
 public class LogInUI extends JFrame implements ActionListener {
 
@@ -19,13 +19,13 @@ public class LogInUI extends JFrame implements ActionListener {
     private JTextField passwordText;
     private JLabel success;
 
-    // EFFECTS: Create a lab inventory frame with an image icon and login in information
+    // EFFECTS: Creates a lab inventory frame with an image icon and login in information
     public LogInUI() {
         super("Lab Inventory");
         setUp();
     }
 
-    // EFFECTS: Set up a frame with an image icon and a panel with labels on it
+    // EFFECTS: Sets up a frame with an image and a panel with labels on it
     public void setUp() {
         setSize(800, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,7 +42,7 @@ public class LogInUI extends JFrame implements ActionListener {
     }
 
 
-    // EFFECTS: Set up different log in labels on the panel, including username, password, and login button
+    // EFFECTS: Sets up different log in labels on the panel, including username, password, and login button
     public void labelSetUp() {
 
         userLabel = new JLabel("User Name: ");
@@ -74,7 +74,7 @@ public class LogInUI extends JFrame implements ActionListener {
         panel.add(success);
     }
 
-    // EFFECTS: the action related to the Login button; if it is successful, it will start a new app;
+    // EFFECTS: the action related to the Login button; if it is successful, it will start the main page of app;
     //          if not successful, it will inform the user.
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -88,11 +88,6 @@ public class LogInUI extends JFrame implements ActionListener {
         } else {
             success.setText("Incorrect username or password!");
         }
-    }
-
-    public void close() {
-        WindowEvent winClosingEvent = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
     }
 
 }

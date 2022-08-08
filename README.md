@@ -23,6 +23,14 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - As a user, I want to be able to save all lab inventory information to file
 - As a user, I want to be able to load previous saved information from file 
 
+#  Instructions for Grader
+
+- You can generate the first required event by clicking the button labelled "ADD"
+- You can generate the second required event by clicking the button labelled "DELETE"
+- You can locate my visual component on the starting login page 
+  (only username: shumin, password: 123456 will bring you to main page)
+- You can save the state of my application by clicking button labelled "SAVE"
+- You can reload the state of my application by selecting the menu item "File" then "load"
 
 
     
