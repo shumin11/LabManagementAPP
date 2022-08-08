@@ -143,6 +143,67 @@ class ItemTest {
                 "location: Room101Cabinet2, vendor: Fisher, updated: 2022-07-24, toOrder: false"));
     }
 
+    @Test
+    public void testEquals_Symmetric() {
+        assertTrue(testItem.equals(testItem));
+        assertTrue(testItem.hashCode() == testItem.hashCode());
+        Item otherItem = new Item("PipetteTips", 80, "Room101Cabinet2", "Fisher",
+                "2022-07-24", 10);
+        assertTrue(testItem.equals(otherItem) && otherItem.equals(testItem));
+        assertTrue(testItem.hashCode() == otherItem.hashCode());
+        Item secondItem = null;
+        assertFalse(testItem.equals(secondItem) && secondItem.equals(testItem));
+    }
+
+    @Test
+    public void testNameDifferentItem() {
+        Item nameDifferentItem = new Item("gloves", 80, "Room101Cabinet2",
+                "Fisher", "2022-07-24", 10);
+        assertFalse(testItem.equals(nameDifferentItem) && nameDifferentItem.equals(testItem));
+        assertFalse(testItem.hashCode() == nameDifferentItem.hashCode());
+    }
+
+    @Test
+    public void testAmountDifferentItem() {
+        Item amountDifferentItem = new Item("PipetteTips", 100, "Room101Cabinet2",
+                "Fisher", "2022-07-24", 10);
+        assertFalse(testItem.equals(amountDifferentItem) && amountDifferentItem.equals(testItem));
+        assertFalse(testItem.hashCode() == amountDifferentItem.hashCode());
+    }
+
+    @Test
+    public void testLocationDifferentItem() {
+        Item locationDifferentItem = new Item("PipetteTips", 80, "Room",
+                "Fisher", "2022-07-24", 10);
+        assertFalse(testItem.equals(locationDifferentItem) && locationDifferentItem.equals(testItem));
+        assertFalse(testItem.hashCode() == locationDifferentItem.hashCode());
+
+    }
+
+    @Test
+    public void testVendorDifferentItem() {
+        Item vendorDifferentItem = new Item("PipetteTips", 80, "Room101Cabinet2",
+                "vwr", "2022-07-24", 10);
+        assertFalse(testItem.equals(vendorDifferentItem) && vendorDifferentItem.equals(testItem));
+        assertFalse(testItem.hashCode() == vendorDifferentItem.hashCode());
+    }
+
+    @Test
+    public void testUpdatedDifferentItem() {
+        Item updatedDifferentItem = new Item("PipetteTips", 80, "Room101Cabinet2",
+                "Fisher", "2022", 10);
+        assertFalse(testItem.equals(updatedDifferentItem) && updatedDifferentItem.equals(testItem));
+        assertFalse(testItem.hashCode() == updatedDifferentItem.hashCode());
+    }
+
+    @Test
+    public void testCutoffDifferentItem() {
+        Item cutoffDifferentItem = new Item("PipetteTips", 80, "Room101Cabinet2",
+                "Fisher", "2022-07-24", 50);
+        assertFalse(testItem.equals(cutoffDifferentItem) && cutoffDifferentItem.equals(testItem));
+        assertFalse(testItem.hashCode() == cutoffDifferentItem.hashCode());
+    }
+
 
 }
 
