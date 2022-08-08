@@ -161,21 +161,16 @@ public class Item implements Writable {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
-        return amount == item.amount && cutoff == item.cutoff && toOrder == item.toOrder
-                && itemName.equals(item.itemName) && location.equals(item.location)
-                && vendor.equals(item.vendor) && updated.equals(item.updated);
+        return amount == item.amount && cutoff == item.cutoff && itemName.equals(item.itemName)
+                && location.equals(item.location) && vendor.equals(item.vendor) && updated.equals(item.updated);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(itemName, amount, location, vendor, updated, cutoff, toOrder);
+        return Objects.hash(itemName, amount, location, vendor, updated, cutoff);
     }
 }
 
