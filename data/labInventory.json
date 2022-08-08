@@ -1,50 +1,28 @@
 [
     {
-        "type name": "general supply",
+        "type name": "general type",
         "items": [{
             "amount": 100,
-            "notes": [""],
-            "vendor": "Fisher",
+            "notes": ["none"],
+            "vendor": "fisher",
             "toOrder": false,
             "location": "room110",
             "cutoff": 50,
             "item name": "tips",
-            "updated": "2022-8-07"
+            "updated": "2022"
         }]
     },
     {
         "type name": "chemicals",
-        "items": [
-            {
-                "amount": 2,
-                "notes": ["none"],
-                "vendor": "Fisher",
-                "toOrder": false,
-                "location": "room110",
-                "cutoff": 1,
-                "item name": "agar",
-                "updated": "2022-8-07"
-            },
-            {
-                "amount": 10,
-                "notes": ["none"],
-                "vendor": "Rogers",
-                "toOrder": true,
-                "location": "room110",
-                "cutoff": 20,
-                "item name": "antibody",
-                "updated": "2022-8-07"
-            },
-            {
-                "amount": 10,
-                "notes": ["none"],
-                "vendor": "bio-rad",
-                "toOrder": false,
-                "location": "room110",
-                "cutoff": 2,
-                "item name": "staining solution",
-                "updated": "2022-8-07"
-            }
-        ]
+        "items": [{
+            "amount": 1,
+            "notes": ["none"],
+            "vendor": "vwr",
+            "toOrder": true,
+            "location": "room",
+            "cutoff": 1,
+            "item name": "agar",
+            "updated": "2022"
+        }]
     }
 ]

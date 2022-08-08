@@ -264,11 +264,10 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 selectedRow = table.getSelectedRow();
-                int i = selectedRow - 1;
+                int i = selectedRow;
                 if (i >= 0) {
-                    model.removeRow(selectedRow);
                     String itemName = (String) table.getValueAt(i, 1);
-                    int initialAmount = (int) table.getValueAt(i, 2);
+                    int initialAmount = (int) model.getValueAt(i, 2);
                     String location = (String) table.getValueAt(i, 3);
                     String vendor = (String) table.getValueAt(i, 4);
                     String updated = (String) table.getValueAt(i, 5);
@@ -277,6 +276,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
                     itemB = new Item(itemName, initialAmount, location, vendor, updated, cutoff);
                     itemB.getNotes().addAll(notes);
                     removeItem();
+                    model.removeRow(selectedRow);
                 } else {
                     JOptionPane.showMessageDialog(null,
                             "Selection Error", "Error", 0);
@@ -287,7 +287,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
 
     // EFFECTS: Removes selected item from typeList
     public void removeItem() {
-        int tableRow = selectedRow - 1;
+        int tableRow = selectedRow;
         String typeName = (String) table.getValueAt(tableRow, 0);
         for (model.Type j : typeList.getTypes()) {
             if (j.getTypeName().equals(typeName)) {
