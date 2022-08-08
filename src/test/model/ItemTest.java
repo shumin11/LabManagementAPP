@@ -4,6 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ItemTest {
@@ -153,6 +156,8 @@ class ItemTest {
         assertTrue(testItem.hashCode() == otherItem.hashCode());
         Item secondItem = null;
         assertFalse(testItem.equals(secondItem) && secondItem.equals(testItem));
+        List<String> notSameClass = new ArrayList<>();
+        assertFalse(testItem.equals(notSameClass) && notSameClass.equals(testItem));
     }
 
     @Test
