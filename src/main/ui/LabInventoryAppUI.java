@@ -6,7 +6,6 @@ import model.Item;
 import model.TypeList;
 import persistence.JsonReader;
 import persistence.JsonWriter;
-import sun.lwawt.macosx.CSystemTray;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
