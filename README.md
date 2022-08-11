@@ -33,26 +33,25 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - You can reload the state of my application by selecting the menu item "File" then "load"
 
 # Phase 4: Task 2
-Wed Aug 10 20:30:11 PDT 2022
-Item (named: Tips , amount: 200 , location: RoomA , vendor: Fisher , updated: 2022-8-10 , toOrder: false) ADDED to the type of General Supply
+Wed Aug 10 20:41:19 PDT 2022
+Item (named: Tips , amount: 200 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) ADDED to the type of General Supply
 
 
-Wed Aug 10 20:30:33 PDT 2022
-Item (named: Gloves , amount: 100 , location: RoomA , vendor: Fisher , updated: 2022-8-10 , toOrder: true) ADDED to the type of General Supply
+Wed Aug 10 20:41:29 PDT 2022
+Item (named: Gloves , amount: 100 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: true) ADDED to the type of General Supply
 
 
-Wed Aug 10 20:31:02 PDT 2022
-Item (named: Flasks , amount: 50 , location: RoomA , vendor: Fisher , updated: 2022-8-10 , toOrder: false) ADDED to the type of General Supply
+Wed Aug 10 20:41:42 PDT 2022
+Item (named: Flask , amount: 30 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) ADDED to the type of General Supply
 
 
-Wed Aug 10 20:31:22 PDT 2022
-Item (named: Agar , amount: 2 , location: RoomB , vendor: VWR , updated: 2022-8-10 , toOrder: false) ADDED to the type of Chemicals
+Wed Aug 10 20:41:59 PDT 2022
+Item (named: Agar , amount: 2 , location: RoomB , vendor: Fisher , updated: 2022-08-10 , toOrder: false) ADDED to the type of Chemical
 
 
-Wed Aug 10 20:31:28 PDT 2022
-Item (named: Flasks , amount: 50 , location: RoomA , vendor: Fisher , updated: 2022-8-10 , toOrder: false) REMOVED from the type of General Supply
+Wed Aug 10 20:42:03 PDT 2022
+Item (named: Flask , amount: 30 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) REMOVED from the type of General Supply
 
-    
 
 
 

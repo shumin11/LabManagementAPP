@@ -10,7 +10,7 @@
                 "location": "RoomA",
                 "cutoff": 100,
                 "item name": "Tips",
-                "updated": "2022-8-10"
+                "updated": "2022-08-10"
             },
             {
                 "amount": 100,
@@ -20,21 +20,21 @@
                 "location": "RoomA",
                 "cutoff": 200,
                 "item name": "Gloves",
-                "updated": "2022-8-10"
+                "updated": "2022-08-10"
             }
         ]
     },
     {
-        "type name": "Chemicals",
+        "type name": "Chemical",
         "items": [{
             "amount": 2,
             "notes": ["none"],
-            "vendor": "VWR",
+            "vendor": "Fisher",
             "toOrder": false,
             "location": "RoomB",
             "cutoff": 1,
             "item name": "Agar",
-            "updated": "2022-8-10"
+            "updated": "2022-08-10"
         }]
     }
 ]
