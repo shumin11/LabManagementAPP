@@ -92,7 +92,7 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
             public void windowClosing(WindowEvent e) {
                 EventLog events = EventLog.getInstance();
                 for (Event event : events) {
-                    System.out.println(event.toString());
+                    System.out.println(event.toString() + "\n\n");
                 }
                 System.exit(0);
             }

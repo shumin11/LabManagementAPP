@@ -15,7 +15,7 @@
             {
                 "amount": 100,
                 "notes": ["none"],
-                "vendor": "VWR",
+                "vendor": "Fisher",
                 "toOrder": true,
                 "location": "RoomA",
                 "cutoff": 200,
@@ -26,27 +26,15 @@
     },
     {
         "type name": "Chemicals",
-        "items": [
-            {
-                "amount": 1,
-                "notes": ["none"],
-                "vendor": "Sigma",
-                "toOrder": true,
-                "location": "RoomC",
-                "cutoff": 2,
-                "item name": "Agar",
-                "updated": "2022-8-10"
-            },
-            {
-                "amount": 2,
-                "notes": ["none"],
-                "vendor": "Sigma",
-                "toOrder": false,
-                "location": "RoomC",
-                "cutoff": 1,
-                "item name": "Tris base",
-                "updated": "2022-8-10"
-            }
-        ]
+        "items": [{
+            "amount": 2,
+            "notes": ["none"],
+            "vendor": "VWR",
+            "toOrder": false,
+            "location": "RoomB",
+            "cutoff": 1,
+            "item name": "Agar",
+            "updated": "2022-8-10"
+        }]
     }
 ]
