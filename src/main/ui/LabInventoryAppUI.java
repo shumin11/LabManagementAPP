@@ -1,15 +1,20 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.Item;
 import model.TypeList;
 import persistence.JsonReader;
 import persistence.JsonWriter;
+import sun.lwawt.macosx.CSystemTray;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -71,11 +76,29 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
         createEditors();
         createButtons();
         typeList = new TypeList();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        closeWindow();
+
         pack();
         revalidate();
         setVisible(true);
     }
+
+    // EFFECTS: print to console all the events that have been logged since started before quiting the application
+    public void closeWindow() {
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                EventLog events = EventLog.getInstance();
+                for (Event event : events) {
+                    System.out.println(event.toString());
+                }
+                System.exit(0);
+            }
+        });
+    }
+
 
     // EFFECTS: add a menu bar to the main frame
     public void addMenuBar() {
@@ -313,4 +336,6 @@ public class LabInventoryAppUI extends JFrame implements ActionListener {
             }
         });
     }
+
+
 }

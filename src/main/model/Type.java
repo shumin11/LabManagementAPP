@@ -30,6 +30,10 @@ public class Type implements Writable {
     public boolean addItemToType(String typeName, Item item) {
         if (this.typeName.equals(typeName) && (!items.contains(item))) {
             this.items.add(item);
+            EventLog.getInstance().logEvent(new Event("Item (named: " + item.getItemName()
+                    + " , amount: " + item.getAmount() + " , location: " + item.getLocation()
+                    + " , vendor: " + item.getVendor() + " , updated: " + item.getUpdated()
+                    + " , toOrder: " + item.isToOrder() + ") ADDED to the type of " + typeName));
             return true;
         } else {
             return false;
@@ -43,6 +47,10 @@ public class Type implements Writable {
     public boolean removeItemFromType(String typeName, Item item) {
         if (this.typeName.equals(typeName) && (this.items.contains(item))) {
             this.items.remove(item);
+            EventLog.getInstance().logEvent(new Event("Item (named: " + item.getItemName()
+                    + " , amount: " + item.getAmount() + " , location: " + item.getLocation()
+                    + " , vendor: " + item.getVendor() + " , updated: " + item.getUpdated()
+                    + " , toOrder: " + item.isToOrder() + ") REMOVED from the type of " + typeName));
             return true;
         } else {
             return false;

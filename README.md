@@ -32,6 +32,24 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - You can save the state of my application by clicking button labelled "SAVE"
 - You can reload the state of my application by selecting the menu item "File" then "load"
 
+# Phase 4: Task 2
+Wed Aug 10 20:10:45 PDT 2022
+Item (named: Tips , amount: 200 , location: RoomA , vendor: Fisher , updated: 2022-8-10 , toOrder: false) ADDED to the type of General Supply
+Wed Aug 10 20:11:02 PDT 2022
+Item (named: Gloves , amount: 100 , location: RoomA , vendor: VWR , updated: 2022-8-10 , toOrder: true) ADDED to the type of General Supply
+Wed Aug 10 20:11:39 PDT 2022
+Item (named: Flasks , amount: 10 , location: RoomB , vendor: Bio-Rad , updated: 2022-8-10 , toOrder: true) ADDED to the type of General Supply
+Wed Aug 10 20:12:00 PDT 2022
+Item (named: Agar , amount: 1 , location: RoomC , vendor: Sigma , updated: 2022-8-10 , toOrder: true) ADDED to the type of Chemicals
+Wed Aug 10 20:13:48 PDT 2022
+Item (named: Tris base , amount: 2 , location: RoomC , vendor: Sigma , updated: 2022-8-10 , toOrder: false) ADDED to the type of Chemicals
+Wed Aug 10 20:13:58 PDT 2022
+Item (named: EDTA , amount: 2 , location: RoomC , vendor: Sigma , updated: 2022-8-10 , toOrder: false) ADDED to the type of Chemicals
+Wed Aug 10 20:14:12 PDT 2022
+Item (named: Flasks , amount: 10 , location: RoomB , vendor: Bio-Rad , updated: 2022-8-10 , toOrder: true) REMOVED from the type of General Supply
+Wed Aug 10 20:14:16 PDT 2022
+Item (named: EDTA , amount: 2 , location: RoomC , vendor: Sigma , updated: 2022-8-10 , toOrder: false) REMOVED from the type of Chemicals
+
 
     
 

@@ -1,28 +1,52 @@
 [
     {
-        "type name": "general type",
-        "items": [{
-            "amount": 100,
-            "notes": ["none"],
-            "vendor": "fisher",
-            "toOrder": false,
-            "location": "room110",
-            "cutoff": 50,
-            "item name": "tips",
-            "updated": "2022"
-        }]
+        "type name": "General Supply",
+        "items": [
+            {
+                "amount": 200,
+                "notes": ["none"],
+                "vendor": "Fisher",
+                "toOrder": false,
+                "location": "RoomA",
+                "cutoff": 100,
+                "item name": "Tips",
+                "updated": "2022-8-10"
+            },
+            {
+                "amount": 100,
+                "notes": ["none"],
+                "vendor": "VWR",
+                "toOrder": true,
+                "location": "RoomA",
+                "cutoff": 200,
+                "item name": "Gloves",
+                "updated": "2022-8-10"
+            }
+        ]
     },
     {
-        "type name": "chemicals",
-        "items": [{
-            "amount": 1,
-            "notes": ["none"],
-            "vendor": "vwr",
-            "toOrder": true,
-            "location": "room",
-            "cutoff": 1,
-            "item name": "agar",
-            "updated": "2022"
-        }]
+        "type name": "Chemicals",
+        "items": [
+            {
+                "amount": 1,
+                "notes": ["none"],
+                "vendor": "Sigma",
+                "toOrder": true,
+                "location": "RoomC",
+                "cutoff": 2,
+                "item name": "Agar",
+                "updated": "2022-8-10"
+            },
+            {
+                "amount": 2,
+                "notes": ["none"],
+                "vendor": "Sigma",
+                "toOrder": false,
+                "location": "RoomC",
+                "cutoff": 1,
+                "item name": "Tris base",
+                "updated": "2022-8-10"
+            }
+        ]
     }
 ]
