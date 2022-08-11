@@ -52,7 +52,11 @@ Item (named: Agar , amount: 2 , location: RoomB , vendor: Fisher , updated: 2022
 Wed Aug 10 20:42:03 PDT 2022
 Item (named: Flask , amount: 30 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) REMOVED from the type of General Supply
 
+# Phase 4: Task 3
+- Add an abstract class for LabInventoryAPP and LabInventoryAPPUI, as they share similar methods, so I can put their shared
+  methods in the abstract class and let both of them extend it.
 
+- Abstract duplicated code into Methods in the classes, especially for the LabInventoryAPP and LabInventoryAPPUI
 
 
 
