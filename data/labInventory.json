@@ -1,40 +1,19 @@
 [
     {
-        "type name": "General Supply",
-        "items": [
-            {
-                "amount": 200,
-                "notes": ["none"],
-                "vendor": "Fisher",
-                "toOrder": false,
-                "location": "RoomA",
-                "cutoff": 100,
-                "item name": "Tips",
-                "updated": "2022-08-10"
-            },
-            {
-                "amount": 100,
-                "notes": ["none"],
-                "vendor": "Fisher",
-                "toOrder": true,
-                "location": "RoomA",
-                "cutoff": 200,
-                "item name": "Gloves",
-                "updated": "2022-08-10"
-            }
-        ]
-    },
-    {
-        "type name": "Chemical",
+        "type name": "general supply",
         "items": [{
-            "amount": 2,
+            "amount": 200,
             "notes": ["none"],
             "vendor": "Fisher",
-            "toOrder": false,
-            "location": "RoomB",
-            "cutoff": 1,
-            "item name": "Agar",
+            "toOrder": true,
+            "location": "CabinetA",
+            "cutoff": 300,
+            "item name": "gloves",
             "updated": "2022-08-10"
         }]
+    },
+    {
+        "type name": "Chemicals",
+        "items": []
     }
 ]
