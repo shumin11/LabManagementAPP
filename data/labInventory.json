@@ -1,19 +1,19 @@
 [
     {
-        "type name": "general supply",
-        "items": [{
-            "amount": 200,
-            "notes": ["none"],
-            "vendor": "Fisher",
-            "toOrder": true,
-            "location": "CabinetA",
-            "cutoff": 300,
-            "item name": "gloves",
-            "updated": "2022-08-10"
-        }]
+        "type name": "General Gupply",
+        "items": []
     },
     {
-        "type name": "Chemicals",
-        "items": []
+        "type name": "General Supply",
+        "items": [{
+            "amount": 1000,
+            "notes": ["none"],
+            "vendor": "Fisher",
+            "toOrder": false,
+            "location": "roomA",
+            "cutoff": 500,
+            "item name": "Pipette Tips (200ul)",
+            "updated": "2022-8-25"
+        }]
     }
 ]
