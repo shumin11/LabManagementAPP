@@ -23,7 +23,7 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - As a user, I want to be able to save all lab inventory information to file
 - As a user, I want to be able to load previous saved information from file 
 
-#  Instructions for Grader
+#  Instructions for User
 
 - You can generate the first required event by clicking the button labelled "ADD"
 - You can generate the second required event by clicking the button labelled "DELETE"
@@ -32,31 +32,7 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - You can save the state of my application by clicking button labelled "SAVE"
 - You can reload the state of my application by selecting the menu item "File" then "load"
 
-# Phase 4: Task 2
-Wed Aug 10 20:41:19 PDT 2022
-Item (named: Tips , amount: 200 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) ADDED to the type of General Supply
 
-
-Wed Aug 10 20:41:29 PDT 2022
-Item (named: Gloves , amount: 100 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: true) ADDED to the type of General Supply
-
-
-Wed Aug 10 20:41:42 PDT 2022
-Item (named: Flask , amount: 30 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) ADDED to the type of General Supply
-
-
-Wed Aug 10 20:41:59 PDT 2022
-Item (named: Agar , amount: 2 , location: RoomB , vendor: Fisher , updated: 2022-08-10 , toOrder: false) ADDED to the type of Chemical
-
-
-Wed Aug 10 20:42:03 PDT 2022
-Item (named: Flask , amount: 30 , location: RoomA , vendor: Fisher , updated: 2022-08-10 , toOrder: false) REMOVED from the type of General Supply
-
-# Phase 4: Task 3
-- Add abstract class for LabInventoryAPP and LabInventoryAPPUI, as they share similar methods, so I can put their 
-  shared methods in the abstract class and let both of them extend it.
-
-- Abstract duplicated code into Methods in the classes, especially for the LabInventoryAPP and LabInventoryAPPUI
 
 
 
