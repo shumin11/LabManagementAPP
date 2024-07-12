@@ -32,7 +32,7 @@ looking for chemicals, waiting for supplies to order, and communicating well wit
 - You can save the state of my application by clicking button labelled "SAVE"
 - You can reload the state of my application by selecting the menu item "File" then "load"
 
-#  UML Design Diagram
+##  UML Design Diagram
 [View the Document](/UML_Design_Diagram.pdf)
 
 
